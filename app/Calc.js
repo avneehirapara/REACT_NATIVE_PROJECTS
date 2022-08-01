@@ -324,6 +324,7 @@ export default function Calc() {
        flex:1,
        fontSize:20,
        backgroundColor:'black',
+       marginBottom:50
     },
     result: {
       flex:1,
