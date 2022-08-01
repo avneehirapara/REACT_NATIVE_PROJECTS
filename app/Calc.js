@@ -301,7 +301,7 @@ import { View, Text,  TouchableOpacity ,StyleSheet} from 'react-native'
 import React, { useState } from 'react'
 
 export default function Calc() {
-
+    
   const [equation, setEquation] = useState('');
 
   const data = ['C', 'back','/', '*','7', '8', '9',  '-', '4', '5', '6', '+','1', '2', '3',  '=','0', '.', '00', '%']
