@@ -304,7 +304,7 @@ export default function Calc() {
     
   const [equation, setEquation] = useState('');
 
-  const data = ['C', 'back','/', '*','7', '8', '9',  '-', '4', '5', '6', '+','1', '2', '3',  '=','0', '.', '00', '%']
+  const data = ['C', 'back','/', '*','7', '8', '9',  '-', '4', '5', '6', '+','1', '2', '3',  '%','0', '.', '00', '=']
 
   const Digit = (value) => {
     setEquation(equation + value);
@@ -323,7 +323,7 @@ export default function Calc() {
     container: {
        flex:1,
        fontSize:20,
-       backgroundColor:'gray'
+       backgroundColor:'black',
     },
     result: {
       flex:1,
@@ -343,22 +343,30 @@ export default function Calc() {
       flexWrap: 'wrap',
     },
     button: {
-      width: '25%',
-      height: '20.1%',  
+      width:85,
+      height:110,  
       justifyContent:'center',
       alignItems:'center',
+      margin:2,
+     
 
     },
     
     Bcolor:{
-    backgroundColor:'gray'
+    backgroundColor:'#AEB6BF',
+    borderRadius:10,
+   
     },
     color:{
       backgroundColor:'black'
     },
     TButton:{
       fontSize:20,
-      color:"white"
+      color:"white",
+      borderRadius:10,
+   
+   
+     
     },
     TextColor:{
       color:'black'

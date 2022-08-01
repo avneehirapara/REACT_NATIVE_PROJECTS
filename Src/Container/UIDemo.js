@@ -13,7 +13,7 @@ export default function UIDemo() {
     <View>
       <Text style={styles.fontDemo}>UIDemo</Text>
       <Icon name="verified-user" size={30} color="#4F8EF7" />
-      <Image source={imageS} />
+      {/* <Image source={imageS} /> */}
 
     </View>
   )
@@ -22,7 +22,7 @@ export default function UIDemo() {
 export const styles = StyleSheet.create({
   fontDemo: {
     fontSize: 50,
-    fontFamily: 'Roboto-Bold',
+    fontFamily: '',
     color: colors.secondary
   }
 })
