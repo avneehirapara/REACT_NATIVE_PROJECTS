@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, ScrollView } from 'react-native'
 import React, { Component } from 'react'
 
 export default class ClassBaseTimer extends Component {
@@ -35,6 +35,7 @@ export default class ClassBaseTimer extends Component {
     render() {
         // console.log(this.state.time);
         return (
+            <ScrollView>
             <View  style={StyleSheet.body}>
                 
                 <View>
@@ -42,6 +43,7 @@ export default class ClassBaseTimer extends Component {
                 <Text style={styles.time}>{this.state.time.toLocaleTimeString()}</Text>
             </View>
             </View>
+            </ScrollView>
         )
     }
 }

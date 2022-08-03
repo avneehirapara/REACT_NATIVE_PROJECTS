@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView, TextInput,StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import { Icon } from 'react-native-vector-icons/icon';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
 export default function GstClaculator() {
@@ -10,20 +10,22 @@ export default function GstClaculator() {
     const [getdata, setdata] = useState(0);
 
     const GstClaculator = () => {
-        var result = parseInt(getdata) * 10/100;
+        
+        let result = parseInt(getdata) * 10/100;
+        console.log("kkkkkkkk",getdata);
         setresult(result)
     }  
 
     return (
         <View>                                                                                                              
             <SafeAreaView style={styles.SafeAreaView}>
-                {/* <Icon name='verified-user' fontSize={30}/> */}
+                <MaterialIcons name='verified-user' fontSize={30}/>
                 <Text style={styles.Text}>{getresult}</Text>
                 <TextInput style={styles.TextInput}
                     placeholder='Please Enter Your Amount'
                     keyboardType='decimal-pad'
-                    onChange={data => setdata(data)} />
-                <TouchableOpacity    handle={GstClaculator} >
+                    onChangeText={setdata} />
+                <TouchableOpacity    onPress={GstClaculator} >
                     <Text style={styles.TextButoon}>Calcutate </Text>
                 </TouchableOpacity> 
             </SafeAreaView>
