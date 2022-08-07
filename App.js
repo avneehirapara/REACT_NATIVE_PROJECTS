@@ -6,7 +6,11 @@ import GstClaculator from './app/GstClaculator'
 import FunBaseTimer from './app/FunBaseTimer'
 import ClassBaseTimer from './app/ClassBaseTimer'
 import FlatList1 from './app/FlatList'
-import Meesho from './app/meesho'
+import Meesho from './app/Meesho'
+import SearchSreen from './app/SearchSreen'
+import FilterMainSreen from './app/FilterMainSreen'
+import SignInPage from './app/SignInPage'
+import ForgetPassSreen from './app/ForgetPassSreen'
 
 
 
@@ -21,7 +25,11 @@ export default function App() {
         {/* <GstClaculator /> */}
         {/* <FunBaseTimer /> */}
         {/* <ClassBaseTimer /> */}
-        <Meesho />
+        {/* <Meesho /> */}
+        {/* <SearchSreen /> */}
+        {/* <FilterMainSreen /> */}
+        {/* <SignInPage /> */}
+         <ForgetPassSreen />
       </ScrollView>
     </>
   )
