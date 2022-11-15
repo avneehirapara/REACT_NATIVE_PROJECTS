@@ -11,15 +11,21 @@ import SearchSreen from './app/SearchSreen'
 import FilterMainSreen from './app/FilterMainSreen'
 import SignInPage from './app/SignInPage'
 import ForgetPassSreen from './app/ForgetPassSreen'
-
-
+import ProdectView from './app/ProdectView'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { colors } from './assets/colors/colors'
+import { TabNavigation } from './Route/TabNavigation'
 
 export default function App() {
 
   return (
-    <>
-      <ScrollView>
-        {/* <FlatList1 /> */}
+  //   <NavigationContainer>
+  //   <TabNavigation/>
+  // </NavigationContainer>
+
+    <View>
+         <FlatList1 /> 
         {/* <Calc /> */}
         {/* <UIDemo /> */}
         {/* <GstClaculator /> */}
@@ -29,9 +35,9 @@ export default function App() {
         {/* <SearchSreen /> */}
         {/* <FilterMainSreen /> */}
         {/* <SignInPage /> */}
-         <ForgetPassSreen />
-      </ScrollView>
-    </>
+        {/* <ForgetPassSreen /> */}
+        {/* <ProdectView /> */}
+        </View>
   )
 }
 

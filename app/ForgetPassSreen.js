@@ -55,12 +55,11 @@ const styles = StyleSheet.create({
     // marginRight:15   
   },
   crossIcon: {
+    flex:1,
     color: 'black',
     marginTop: 11,         //===========crose horizontal end //
     marginLeft: 341,
-    // marginRight: 15,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+    alignSelf:'flex-end',
     fontSize: 30
   },
   meeshoImg: {

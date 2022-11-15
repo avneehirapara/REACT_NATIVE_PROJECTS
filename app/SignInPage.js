@@ -110,13 +110,14 @@ const styles = StyleSheet.create({
     // marginRight:15   
   },
   crossIcon: {
+    flex: 1,
     color: 'black',
-    marginTop: 11,         //===========crose horizontal end //
+    marginTop: 11,        
     marginLeft: 341,
-    // marginRight: 15,
     justifyContent: 'flex-end',
     alignItems:'flex-end',
-    fontSize: 30
+    fontSize: 30,
+    alignSelf: 'flex-end'
   },
   wellComeBOX: {
     height: 53,
@@ -204,24 +205,26 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Regular',
   },
   ORbox: {
-    height: 18,
-    width: 277,
     flexDirection: 'row',
-
-    alignSelf: 'center',
+    alignItems:'center',
+    justifyContent:'center',
     marginTop: 61
   },
   FirstBorder: {
-    width: 120,
-    textDecorationLine: 'underline'
-
+    borderWidth:1,
+    width:'30%',
+    borderColor:'gray'
   },
   OR: {
     fontFamily: 'Montserrat-Regular',
-    fontSize: 17
+    fontSize: 17,
+    marginRight:10,
+    marginLeft:10,
   },
   SecondBorder: {
-
+    borderWidth:1,
+     width:'30%',
+     borderColor:'gray'
   },
   IconsBox: {
     flexDirection: 'row',

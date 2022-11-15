@@ -1,8 +1,9 @@
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, placeholder,TextInput } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, placeholder, TextInput } from 'react-native'
 import React from 'react'
 import { iconss } from '../assets/icons';
 import { colors } from '../assets/colors/colors';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 
 
@@ -17,11 +18,11 @@ export default function SearchSreen() {
                     <Image source={iconss.menu} />
                 </TouchableOpacity>
                 <View style={styles.SearchBox}>
-                        <AntDesign  name='search1' style={styles.searchIcon}/>
-                        <TextInput
-                           placeholder='Fine your prodect'
-                         />
-                    </View>
+                    <AntDesign name='search1' style={styles.searchIcon} />
+                    <TextInput
+                        placeholder='Fine your prodect'
+                    />
+                </View>
                 <TouchableOpacity style={styles.notificationIconBox}>
                     <Image style={styles.notificationIcon} source={iconss.notification} />
                 </TouchableOpacity>
@@ -42,6 +43,23 @@ export default function SearchSreen() {
                 <TouchableOpacity style={[styles.listBox, { width: 100, }]}><Text style={styles.listBoxText}>heels</Text></TouchableOpacity>
                 <TouchableOpacity style={[styles.listBox, { width: 82 }]}><Text style={styles.listBoxText}>cap</Text></TouchableOpacity>
             </View>
+            <View style={styles.TabBox}>
+                <TouchableOpacity>
+                    <Image source={require('../assets/images/home.png')} style={[styles.IconImg, styles.HomeMgn]} />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image source={require('../assets/images/cate.png')} style={[styles.IconImg, styles.CateMgn]} />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image source={require('../assets/images/offers.png')} style={[styles.IconImg, styles.OfferMgn]} />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image source={require('../assets/images/cart.png')} style={[styles.IconImg, styles.CartMgn]} />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image source={require('../assets/images/account.png')} style={[styles.IconImg, styles.AccountMgn]} />
+                </TouchableOpacity>
+            </View>
         </ScrollView>
     )
 }
@@ -56,7 +74,7 @@ const styles = StyleSheet.create({
         width: 20
     },
     SearchBox: {
-        flexDirection:'row',
+        flexDirection: 'row',
         backgroundColor: colors.secondary,
         height: 40,
         width: 200,
@@ -72,7 +90,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginTop: 11,
         marginBottom: 11,
-        fontSize:14
+        fontSize: 14
     },
     notificationIconBox: {
         height: 40,
@@ -119,5 +137,52 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         fontFamily: 'Montserrat-Regular',
         color: 'black',
-    }
+    },
+    TabBox: {
+        flexDirection: 'row',
+        width: 372,
+        height: 83,
+        marginTop: 400,
+        alignSelf: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width:0, height:1 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5
+
+    },
+
+    IconImg: {
+        marginTop: 21
+    },
+    HomeMgn: {
+        marginRight: 22,
+        marginLeft: 21,
+        height: 39,
+        width: 38
+    },
+    CateMgn: {
+        marginRight: 25,
+        width: 65,
+        height: 39
+    },
+    OfferMgn: {
+        marginRight: 37,
+        marginTop: 13,
+        width: 39,
+        height: 49,
+    },
+    CartMgn: {
+        marginRight: 34,
+        width: 26,
+        height: 40,
+        marginTop: 22,
+
+    },
+    AccountMgn: {
+        marginRight: 15,
+        width: 51,
+        height: 39,
+        marginTop: 24,
+    },
 })

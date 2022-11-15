@@ -7,10 +7,8 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 
 
-export default function Meesho() {
-    // useEffect(() => {
-    //     LogBox.ignoreLogs(["VirtualizedLists should never be nested"])
-    //   }, [])
+export default function Meesho({ navigation }) {
+
 
     const DATA = [
         {
@@ -43,26 +41,31 @@ export default function Meesho() {
     const ClothDAta = ({ item }) => {
         console.log("item");
         return (
-            <View style={styles.card}>
-                <View>
-                    <Image style={[styles.images1, { height: item.id === 2 ? 220 : 190 }]} source={item.image} />
-                </View>
-                <View style={[styles.heartBox, { top: item.id === 2? 5 : 20 }]}>
-                    <TouchableOpacity>
-                        <MaterialIcons name="favorite-border" style={styles.imageIcon} color="#000" size={20} />
+            
+            <TouchableOpacity
+                onPress={() => navigation.navigate('productView')}
+            >
+                <View style={styles.card}>
+                    <View>
+                        <Image style={[styles.images1, { height: item.id === 2 ? 240 : 220 }]} source={item.image} />
+                    </View>
+                    <View style={styles.heartBox}>
+                        <TouchableOpacity>
+                            <MaterialIcons name="favorite-border" style={styles.imageIcon} color="#000" size={20} />
+                        </TouchableOpacity>
+                        <View style={styles.lessPrice}>
+                            <Text lessPriceText >-20%</Text>
+                        </View>
+                    </View>
+
+                    <Text style={styles.cardText1}>{item.product}</Text>
+                    <Text style={styles.cardText2}><Text style={styles.dolar}>$</Text>{item.price}</Text>
+                    <Text style={{ textDecorationLine: 'line-through' }}>$200</Text>
+                    <TouchableOpacity style={styles.pluseBox}>
+                        <AntDesign name='plussquare' style={styles.plusIcon}></AntDesign>
                     </TouchableOpacity>
-                    <View style={styles.lessPrice}>
-                        <Text lessPriceText>-20%</Text>
                 </View>
-                </View>
-                
-                <Text style={styles.cardText1}>{item.product}</Text>
-                <Text style={styles.cardText2}><Text style={styles.dolar}>$</Text>{item.price}</Text>
-                {/* <Text style={{ textDecorationLine: 'line-through' }}>$200</Text> */}
-                <TouchableOpacity style={styles.pluseBox}>
-                    <AntDesign name='plussquare' style={styles.plusIcon}></AntDesign>
-                </TouchableOpacity>
-            </View>
+            </TouchableOpacity>
 
 
         )
@@ -76,10 +79,10 @@ export default function Meesho() {
                     </TouchableOpacity>
 
                     <View style={styles.SearchBox}>
-                        <AntDesign  name='search1' style={styles.searchIcon}/>
+                        <AntDesign name='search1' style={styles.searchIcon} />
                         <TextInput
-                           placeholder='Fine your prodect'
-                         />
+                            placeholder='Find your produect'
+                        />
                     </View>
                     <TouchableOpacity style={styles.notificationIconBox}>
                         <Image style={styles.notificationIcon} source={iconss.notification} />
@@ -118,7 +121,6 @@ export default function Meesho() {
                 <View>
                     <FlatList
                         numColumns={2}
-                        // contentContainerStyle={{ flexDirection: "row", flexWrap: "wrap" }}
                         data={DATA}
                         renderItem={ClothDAta}
                         keyExtractor={item => item.id}
@@ -133,6 +135,7 @@ const styles = StyleSheet.create({
     // Flex: {
     //     display: 'flex',
     // },
+   
     menuIcon: {
         color: colors.primary,
         marginRight: 14,
@@ -143,8 +146,8 @@ const styles = StyleSheet.create({
         width: 20
     },
     SearchBox: {
-        flexDirection:'row',
-        backgroundColor: colors.secondary,
+        flexDirection: 'row',
+        backgroundColor:colors.secondary,
         height: 40,
         width: 200,
         marginLeft: 15,
@@ -159,7 +162,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginTop: 11,
         marginBottom: 11,
-        fontSize:14
+        fontSize: 14
     },
     notificationIconBox: {
         height: 40,
@@ -203,7 +206,6 @@ const styles = StyleSheet.create({
     text2: {
         fontSize: 16,
         color: "#FF5035",
-        fontFamily: 'Montserrat-SemiBold',
         marginTop: 5
     },
     button: {
@@ -217,13 +219,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     images1: {
-        width: '100%',
         borderRadius: 5,
-
+        alignSelf:'center'
     },
-    dolar:{
-        fontSize:9
-      },
+    dolar: {
+        fontSize: 9
+    },
     list: {
         width: 335,
         height: 40,
@@ -233,7 +234,6 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         marginLeft: 15,
         marginRight: 25,
-        justifyContent: 'space-between'
     },
     listText: {
         alignSelf: 'center',
@@ -281,9 +281,10 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginTop: 15,
         marginTop: 20,
-        position: 'relative',
-        flex: 1,
+        // position: 'relative',
+        // flex: 1,
         justifyContent: 'center',
+        alignContent:'center'
     },
 
     cardText1: {
@@ -312,32 +313,32 @@ const styles = StyleSheet.create({
         top: 20,
         left: 10
     },
-  
+
 
     imageIcon: {
         color: colors.primary,
         alignSelf: 'center',
         padding: 2.5,
     },
-    pluseBox:{
+    pluseBox: {
         position: 'absolute',
-        height:24,
-        width:24,
+        height: 24,
+        width: 24,
         left: 130,
-        top:245,
+        top: 245,
     },
-    plusIcon:{
-        fontSize:25,
-        color:colors.primary,
+    plusIcon: {
+        fontSize: 25,
+        color: colors.primary,
     },
-     lessPrice:{
-        height:24,
-        width:50,
-        backgroundColor:'black,'
+    lessPrice: {
+        height: 24,
+        width: 50,
+        backgroundColor: 'black,'
     },
-    lessPriceText:{
-        fontSize:90,
-        color:colors.white
+    lessPriceText: {
+        fontSize: 90,
+        color: colors.white
     },
 
 })

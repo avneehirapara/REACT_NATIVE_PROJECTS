@@ -60,28 +60,7 @@ export default function FilterMainSreen() {
                     {/* icon========================= */}
                 </View>
             </View>
-            <View style={styles.card}>
-                <View>
-                    <Image style={[styles.images1, { height: item.id === 2 ? 220 : 190 }]} source={item.image} />
-                </View>
-                <View style={[styles.heartBox, { top: item.id === 2 ? 5 : 20 }]}>
-                    <TouchableOpacity>
-                        <MaterialIcons name="favorite-border" style={styles.imageIcon} color="#000" size={20} />
-                    </TouchableOpacity>
-                    <View style={styles.lessPrice}>
-                        <Text lessPriceText>-20%</Text>
-                    </View>
-                </View>
-
-                <Text style={styles.cardText1}>{item.product}</Text>
-                <Text style={styles.cardText2}><Text style={styles.dolar}>$</Text>{item.price}</Text>
-                <TouchableOpacity style={styles.pluseBox}>
-                    <AntDesign name='plussquare' style={styles.plusIcon}>
-
-                    </AntDesign>
-
-                </TouchableOpacity>
-            </View>
+    
             <View>
                 <FlatList
                     numColumns={2}
@@ -93,7 +72,8 @@ export default function FilterMainSreen() {
 
         </View>
     )
-} const styles = StyleSheet.create({
+}
+ const styles = StyleSheet.create({
 
     main: {
         marginTop: 13,
